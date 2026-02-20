@@ -1,0 +1,16 @@
+<div>
+    <h2>{{ message }}</h2>
+    
+    <!-- Click event binding -->
+    <button (click)="onButtonClick()">Click Me!</button>
+  
+    <!-- Mouse enter event binding -->
+    <div (mouseenter)="onMouseEnter()" 
+         style="padding: 20px; border: 1px solid #ccc; margin: 10px;">
+      Hover over this area
+    </div>
+  
+    <!-- Input event binding with $event object -->
+    <input type="text" (input)="onInputChange($event)" placeholder="Type something...">
+  </div>
+  

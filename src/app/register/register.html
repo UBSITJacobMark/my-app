@@ -1,0 +1,63 @@
+<div class="container mt-5 mb-5">
+    <form #registrationForm="ngForm" (ngSubmit)="onSubmit()">
+      <fieldset>
+        <legend>User Registration</legend>
+  
+        <!-- Email Input -->
+        <div class="mb-3">
+          <label for="email" class="form-label mt-4">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" 
+                 [(ngModel)]="user.email" placeholder="Enter email" required>
+          <small class="form-text text-muted">We'll never share your email.</small>
+        </div>
+  
+        <!-- Password Input -->
+        <div class="mb-3">
+          <label for="password" class="form-label mt-4">Password</label>
+          <input type="password" class="form-control" id="password" name="password" 
+                 [(ngModel)]="user.password" placeholder="Password" autocomplete="off" required>
+        </div>
+  
+        <!-- Select Level -->
+        <div class="mb-3">
+          <label for="level" class="form-label mt-4">Experience Level</label>
+          <select class="form-select" id="level" name="level" [(ngModel)]="user.level">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="expert">Expert</option>
+          </select>
+        </div>
+  
+        <!-- Bio Textarea -->
+        <div class="mb-3">
+          <label for="bio" class="form-label mt-4">Short Bio</label>
+          <textarea class="form-control" id="bio" name="bio" rows="3" [(ngModel)]="user.bio"></textarea>
+        </div>
+  
+        <!-- Radio Buttons (Gender Example) -->
+        <fieldset class="mb-3">
+          <legend class="mt-4">Gender</legend>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="male" [(ngModel)]="user.gender">
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="female" [(ngModel)]="user.gender">
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+        </fieldset>
+  
+        <!-- Checkbox (Terms) -->
+        <fieldset class="mb-3">
+          <legend class="mt-4">Agreements</legend>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="terms" id="terms" [(ngModel)]="user.acceptTerms">
+            <label class="form-check-label" for="terms">I accept the terms and conditions</label>
+          </div>
+        </fieldset>
+  
+        <button type="submit" class="btn btn-primary mt-3" [disabled]="!registrationForm.valid">Register</button>
+      </fieldset>
+    </form>
+  </div>
+  
