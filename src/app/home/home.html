@@ -1,16 +1,19 @@
 <div class="container mt-5">
-    <div class="card mb-3 text-center">
-      <h3 class="card-header">{{ appTitle }}</h3>
-  
-      <div class="card-body">
-        <img [src]="userImageUrl" alt="User Avatar" class="img-fluid rounded-circle border">
-        
-        <app-user-interaction></app-user-interaction>
+  <div class="card mb-3 text-center">
+    <h3 class="card-header">{{ appTitle }}</h3>
+
+    <div class="card-body">
+      <img [src]="userImageUrl" alt="User Avatar" class="img-fluid rounded-circle border">
+      
+      <div [class.highlighted]="isHighlighted">
+        Today's Date: {{ currentDate | date:'fullDate' }}
       </div>
-  
-      <div class="card-footer text-muted">
-        Status: {{ isRegOpen ? 'System Active' : 'System Offline' }}
-      </div>
+
+      <app-user-interaction></app-user-interaction>
+    </div>
+
+    <div class="card-footer text-muted">
+      Status: {{ isRegOpen ? 'System Active' : 'System Offline' }}
     </div>
   </div>
-  
+</div>
